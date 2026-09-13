@@ -3,7 +3,13 @@ export const site = {
   shortName: "Gbedeka",
   description:
     "Gbedeka Farms grows maize and raises poultry and pigs while building a more sustainable food system for Ghana and beyond.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+    (process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"),
+
   email: "",
   phone: "",
   regions: ["Volta Region", "Greater Accra Region"],
