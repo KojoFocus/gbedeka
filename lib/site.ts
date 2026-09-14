@@ -10,8 +10,11 @@ export const site = {
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000"),
 
-  email: "",
-  phone: "",
+  email: "gbedeka.farms@gmail.com",
+  phone: "+233 244 847 523",
+  whatsapp: "https://wa.me/233244847523",
+  instagram: "https://instagram.com/Gbedekafarms",
+  linkedin: "https://linkedin.com/in/perry-adoboe-135a00259",
   regions: ["Volta Region", "Greater Accra Region"],
 };
 

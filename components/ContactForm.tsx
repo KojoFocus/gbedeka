@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { site } from "@/lib/site";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -14,7 +15,7 @@ export function ContactForm() {
     const message = String(data.get("message") ?? "");
     const subject = encodeURIComponent(`Website enquiry from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
     setSent(true);
   }
 
@@ -26,7 +27,7 @@ export function ContactForm() {
       </div>
       <label className="mt-6 block text-sm font-medium">How can we help?<textarea required name="message" rows={6} className="mt-2 w-full resize-none rounded-xl border border-[var(--line)] bg-[var(--paper)] px-4 py-3 outline-none focus:border-[var(--green)]" /></label>
       <button type="submit" className="mt-6 inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-6 py-3.5 text-sm font-medium text-white transition hover:bg-[var(--green-dark)]">Send Enquiry <ArrowUpRight size={16} /></button>
-      {sent && <p className="mt-4 text-sm text-[var(--green)]">Your email app should open with the enquiry ready to send. Add Gbedeka&apos;s email address in this component when it is available.</p>}
+      {sent && <p className="mt-4 text-sm text-[var(--green)]">Your email app should open with the enquiry ready to send to Gbedeka Farms.</p>}
     </form>
   );
 }

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Globe2, Mail, MessageCircle, Phone } from "lucide-react";
+import { InstagramIcon } from "@/components/SocialIcons";
 import { navItems, site } from "@/lib/site";
 
 export function Footer() {
@@ -22,6 +23,11 @@ export function Footer() {
             <p className="eyebrow">Connect</p>
             <div className="mt-5 space-y-3 text-sm text-neutral-700">
               <p>Volta & Greater Accra, Ghana</p>
+              <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="flex items-center gap-2 transition hover:text-[var(--green)]"><Phone size={15} />{site.phone}</a>
+              <a href={site.whatsapp} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition hover:text-[var(--green)]"><MessageCircle size={15} />WhatsApp us</a>
+              <a href={`mailto:${site.email}`} className="flex items-center gap-2 transition hover:text-[var(--green)]"><Mail size={15} />{site.email}</a>
+              <a href={site.instagram} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition hover:text-[var(--green)]"><InstagramIcon width={15} height={15} />Instagram</a>
+              <a href={site.linkedin} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition hover:text-[var(--green)]"><Globe2 size={15} />LinkedIn</a>
               <Link href="/contact" className="inline-flex items-center gap-1 text-[var(--green)]">Start a conversation <ArrowUpRight size={15} /></Link>
             </div>
           </div>
