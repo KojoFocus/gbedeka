@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur-md">
-      <div className="container flex min-h-[100px] items-center justify-between py-3 sm:min-h-[112px]">
+      <div className="container flex min-h-[135px] items-center justify-between py-4 sm:min-h-[145px]">
 
         {/* LOGO */}
         <Link
@@ -29,23 +29,23 @@ export function Header() {
           <Image
             src="/images/logo.jpg"
             alt="Gbedeka Farms"
-            width={400}
-            height={150}
+            width={520}
+            height={200}
             priority
-            className="h-[5.5rem] w-auto object-contain sm:h-[6.5rem]"
+            className="h-[6.5rem] w-auto object-contain sm:h-[8rem]"
           />
         </Link>
 
         {/* DESKTOP NAVIGATION */}
         <nav
-          className="hidden items-center gap-6 lg:flex"
+          className="hidden items-center gap-7 lg:flex"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`relative py-2 text-[13px] transition ${
+              className={`relative py-2 text-[14px] transition ${
                 active(item.href)
                   ? "text-[var(--green)]"
                   : "text-neutral-700 hover:text-[var(--green)]"
@@ -56,7 +56,7 @@ export function Header() {
               {active(item.href) && (
                 <motion.span
                   layoutId="active-nav"
-                  className="absolute inset-x-0 -bottom-0.5 h-px bg-[var(--green)]"
+                  className="absolute inset-x-0 -bottom-1 h-px bg-[var(--green)]"
                 />
               )}
             </Link>
@@ -67,22 +67,22 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-1 rounded-full bg-[var(--green)] px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--green-dark)]"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-7 py-3.5 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--green-dark)]"
           >
             Get in Touch
-            <ArrowUpRight size={16} />
+            <ArrowUpRight size={17} />
           </Link>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="rounded-full border border-neutral-200 bg-white/90 p-2.5 backdrop-blur lg:hidden"
+          className="rounded-full border border-neutral-200 bg-white p-3 backdrop-blur lg:hidden"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={21} /> : <Menu size={21} />}
         </button>
       </div>
 
@@ -90,9 +90,9 @@ export function Header() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
+            exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
             className="mx-4 mb-4 rounded-2xl border border-neutral-200 bg-white p-3 shadow-xl lg:hidden"
           >
