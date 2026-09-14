@@ -38,7 +38,7 @@ export function Header() {
 
         {/* DESKTOP NAVIGATION */}
         <nav
-          className="hidden items-center gap-6 xl:flex"
+          className="hidden items-center gap-6 lg:flex"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => (
@@ -64,7 +64,7 @@ export function Header() {
         </nav>
 
         {/* DESKTOP CTA */}
-        <div className="hidden xl:block">
+        <div className="hidden lg:block">
           <Link
             href="/contact"
             className="inline-flex items-center gap-1 rounded-full bg-[var(--green)] px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--green-dark)]"
@@ -80,7 +80,7 @@ export function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="rounded-full border border-neutral-200 bg-white/90 p-2.5 backdrop-blur xl:hidden"
+          className="rounded-full border border-neutral-200 bg-white/90 p-2.5 backdrop-blur lg:hidden"
         >
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -94,7 +94,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="mx-4 mb-4 rounded-2xl border border-neutral-200 bg-white p-3 shadow-xl xl:hidden"
+            className="mx-4 mb-4 rounded-2xl border border-neutral-200 bg-white p-3 shadow-xl lg:hidden"
           >
             <nav
               className="flex flex-col"
@@ -130,12 +130,3 @@ export function Header() {
     </header>
   );
 }
-
-
-
-
-
-
-
-
-
