@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[780px] overflow-hidden bg-white pt-32 sm:min-h-[820px] sm:pt-40">
+      <section className="relative min-h-[780px] overflow-hidden bg-white pt-[190px] sm:min-h-[820px] sm:pt-[205px]">
         <div className="container relative z-10 grid items-end gap-12 pb-12 lg:grid-cols-[0.9fr_1.1fr] lg:pb-20">
 
           <motion.div
