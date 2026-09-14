@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur-md">
-      <div className="container flex items-center justify-between py-3 sm:py-3.5">
+      <div className="container flex min-h-[100px] items-center justify-between py-3 sm:min-h-[112px]">
 
         {/* LOGO */}
         <Link
@@ -29,10 +29,10 @@ export function Header() {
           <Image
             src="/images/logo.jpg"
             alt="Gbedeka Farms"
-            width={280}
-            height={105}
+            width={400}
+            height={150}
             priority
-            className="h-16 w-auto object-contain sm:h-[4.5rem]"
+            className="h-[5.5rem] w-auto object-contain sm:h-[6.5rem]"
           />
         </Link>
 
