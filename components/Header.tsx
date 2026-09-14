@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur-md">
-      <div className="container flex min-h-[135px] items-center justify-between py-4 sm:min-h-[145px]">
+      <div className="container flex min-h-[160px] items-center justify-between py-4 sm:min-h-[175px]">
 
         {/* LOGO */}
         <Link
@@ -29,23 +29,23 @@ export function Header() {
           <Image
             src="/images/logo.jpg"
             alt="Gbedeka Farms"
-            width={520}
-            height={200}
+            width={600}
+            height={225}
             priority
-            className="h-[6.5rem] w-auto object-contain sm:h-[8rem]"
+            className="h-[8rem] w-auto object-contain sm:h-[10rem]"
           />
         </Link>
 
         {/* DESKTOP NAVIGATION */}
         <nav
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-8 lg:flex"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`relative py-2 text-[14px] transition ${
+              className={`relative py-2 text-[15px] transition ${
                 active(item.href)
                   ? "text-[var(--green)]"
                   : "text-neutral-700 hover:text-[var(--green)]"
@@ -67,22 +67,22 @@ export function Header() {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-7 py-3.5 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--green-dark)]"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--green)] px-8 py-4 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-[var(--green-dark)]"
           >
             Get in Touch
-            <ArrowUpRight size={17} />
+            <ArrowUpRight size={18} />
           </Link>
         </div>
 
-        {/* MOBILE MENU */}
+        {/* MOBILE MENU BUTTON */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="rounded-full border border-neutral-200 bg-white p-3 backdrop-blur lg:hidden"
+          className="rounded-full border border-neutral-200 bg-white p-3.5 backdrop-blur lg:hidden"
         >
-          {open ? <X size={21} /> : <Menu size={21} />}
+          {open ? <X size={23} /> : <Menu size={23} />}
         </button>
       </div>
 
